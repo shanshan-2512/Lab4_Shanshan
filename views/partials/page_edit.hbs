@@ -1,0 +1,19 @@
+
+{{#if login.status}}
+<form method="post" action="/page/{{data.pageKey}}">
+<input type = "hidden" name="function" value="edit" />
+<input type="text" name="title" id="title" value="{{data.title}}" />
+<hr />
+
+<textarea name="content" id="content" cols="80">{{{data.content}}}</textarea>
+
+<hr />
+<input type="submit" />
+</form>
+
+<div id="edit_info">
+<span>{{data.pageKey}}</span> last edited by <span>{{data.username}}</span> at <span>{{data.dateModified}}</span>
+</div>
+{{else}}
+<h3>you must be logged in to edit pages!</h3>
+{{/if}}
